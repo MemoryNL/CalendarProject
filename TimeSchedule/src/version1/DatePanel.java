@@ -14,45 +14,45 @@ import javax.swing.JPanel;
 
 public class DatePanel extends JPanel {
 
-	// ¿ÞÂÊ ¹öÆ° ±âº» ÀÌ¹ÌÁö
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½âº» ï¿½Ì¹ï¿½ï¿½ï¿½
 	ImageIcon leftButtonBasicImage = new ImageIcon("images/leftButtonBasicImage.png");
-	// ¿ÞÂÊ ¹öÆ° Enter ÀÌ¹ÌÁö
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Enter ï¿½Ì¹ï¿½ï¿½ï¿½
 	ImageIcon leftButtonEnterImage = new ImageIcon("images/leftButtonEnterImage.png");
-	// ¿À¸¥ÂÊ ¹öÆ° ±âº» ÀÌ¹ÌÁö
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° ï¿½âº» ï¿½Ì¹ï¿½ï¿½ï¿½
 	ImageIcon rightButtonBasicImage = new ImageIcon("images/rightButtonBasicImage.png");
-	// ¿À¸¥ÂÊ ¹öÆ° Enter ÀÌ¹ÌÁö
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° Enter ï¿½Ì¹ï¿½ï¿½ï¿½
 	ImageIcon rightButtonEnterImage = new ImageIcon("images/rightButtonEnterImage.png");
 
-
+	// test
 	/**
 	 * Create the panel.
 	 */
 	public DatePanel() {
 		JButton left = new JButton(leftButtonBasicImage);
 		JButton right = new JButton(rightButtonBasicImage);
-		// Button UI ¼³Á¤
+		// Button UI ï¿½ï¿½ï¿½ï¿½
 		setButtonUI(left); setButtonUI(right);
-		// Mouse ÀÌº¥Æ® Ã³¸®
+		// Mouse ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
 		left.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// EnteredÀÌ¹ÌÁö·Î º¯°æ ½ÃÄÑÁØ´Ù.
+				// Enteredï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 				left.setIcon(leftButtonEnterImage);
-				// Ä¿¼­ÀÇ ¸ð¾çÀ» ¹Ù²ãÁØ´Ù
+				// Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½Ø´ï¿½
 				left.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				// È¿°úÀ½ Àç»ý
+				// È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			}
 
-			// ¸¶¿ì½º°¡ ¹öÆ°¿¡ ³ª°¬À»¶§ ÀÌº¥Æ® Ã³¸®
+			// ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
 			@Override
 			public void mouseExited(MouseEvent e) {
 				left.setIcon(leftButtonBasicImage);
-				// Ä¿¼­ÀÇ ¸ð¾çÀ» ¹Ù²ãÁØ´Ù
+				// Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½Ø´ï¿½
 				left.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 
 			}
 
-			// ¹öÆ°À» Å¬¸¯ÇßÀ»¶§ ÀÌº¥Æ® Ã³¸®
+			// ï¿½ï¿½Æ°ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
 			@Override
 			public void mousePressed(MouseEvent e) {
 			}
@@ -61,53 +61,53 @@ public class DatePanel extends JPanel {
 		right.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// EnteredÀÌ¹ÌÁö·Î º¯°æ ½ÃÄÑÁØ´Ù.
+				// Enteredï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
 				right.setIcon(rightButtonEnterImage);
-				// Ä¿¼­ÀÇ ¸ð¾çÀ» ¹Ù²ãÁØ´Ù
+				// Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½Ø´ï¿½
 				right.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				// È¿°úÀ½ Àç»ý
+				// È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 			}
 
-			// ¸¶¿ì½º°¡ ¹öÆ°¿¡ ³ª°¬À»¶§ ÀÌº¥Æ® Ã³¸®
+			// ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
 			@Override
 			public void mouseExited(MouseEvent e) {
 				right.setIcon(rightButtonBasicImage);
-				// Ä¿¼­ÀÇ ¸ð¾çÀ» ¹Ù²ãÁØ´Ù
+				// Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²ï¿½ï¿½Ø´ï¿½
 				right.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 
 			}
 
-			// ¹öÆ°À» Å¬¸¯ÇßÀ»¶§ ÀÌº¥Æ® Ã³¸®
+			// ï¿½ï¿½Æ°ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ® Ã³ï¿½ï¿½
 			@Override
 			public void mousePressed(MouseEvent e) {
 			}
 		});
-		// ·¹ÀÌ¾Æ¿ô ¼³Á¤
+		// ï¿½ï¿½ï¿½Ì¾Æ¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 		setLayout(new BorderLayout());
-		// ³¯Â¥¸¦ Ç¥ÇöÇÒ JLabel ¼±¾ð
-		JLabel date = new JLabel("2018³â 11¿ù");
-		// ±ÛÀÚ»ö ÁöÁ¤
+		// ï¿½ï¿½Â¥ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ JLabel ï¿½ï¿½ï¿½ï¿½
+		JLabel date = new JLabel("2018ï¿½ï¿½ 11ï¿½ï¿½");
+		// ï¿½ï¿½ï¿½Ú»ï¿½ ï¿½ï¿½ï¿½ï¿½
 		date.setForeground(new Color(238,83,79));
-		// ÆùÆ® ¼±¾ð
-		Font font = new Font("¸ÞÀÌÇÃ½ºÅä¸®",Font.BOLD,20);
-		// ÆùÆ® ÁöÁ¤
+		// ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
+		Font font = new Font("ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ä¸®",Font.BOLD,20);
+		// ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 		date.setFont(font);
-		// ±ÛÀÚ Á¤·Ä
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		date.setHorizontalAlignment(JLabel.CENTER);
-		// ¹è°æÈ­¸é ¼³Á¤
+		// ï¿½ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		setBackground(Color.WHITE);
-		// ÄÄÆ÷³ÍÆ® Ãß°¡
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ß°ï¿½
 		add(date,BorderLayout.CENTER);
 		add(left,BorderLayout.WEST);
 		add(right,BorderLayout.EAST);
 	}
 	
 	public void setButtonUI(JButton button) {
-		// ¿Ü°û¼± Á¦°Å
+		// ï¿½Ü°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		button.setBorderPainted(false);
-		// ³»¿ë Ã¼¿ì±â Á¦°Å
+		// ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		button.setContentAreaFilled(false);
-		// Æ÷Ä¿½º µÇ¾úÀ»½Ã Å×µÎ¸® Á¦°Å
+		// ï¿½ï¿½Ä¿ï¿½ï¿½ ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×µÎ¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 		button.setFocusPainted(false);
 	}
 

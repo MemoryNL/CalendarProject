@@ -11,6 +11,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MainFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3650402257121452162L;
 	int mouseX;
 	int mouseY;
 
@@ -55,7 +59,7 @@ public class MainFrame extends JFrame {
 				setLocation(x - mouseX, y - mouseY);
 			}
 		});
-		
+		// menubar를 North에 추가한다.
 		add(menubar,BorderLayout.NORTH);
 		
 		JPanel mainPanel = new MainPanel();

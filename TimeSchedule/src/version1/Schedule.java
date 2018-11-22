@@ -2,7 +2,10 @@ package version1;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,17 +16,23 @@ public class Schedule extends JPanel{
 	ArrayList <String> todoList;
 	JLabel solarDate;
 	JLabel moonDate;
+
+	// 폰트 선언
+	Font font = new Font("메이플스토리",Font.BOLD,20);
+	
 	public Schedule(int solar, int moon) {
+		setLayout(new BorderLayout());
+		
 		this.solar = solar;
 		this.moon = moon;
-		setLayout(new BorderLayout());
 		solarDate = new JLabel(Integer.toString(solar));
 		moonDate = new JLabel(Integer.toString(solar));
 		solarDate.setHorizontalAlignment(JLabel.CENTER);
 		moonDate.setHorizontalAlignment(JLabel.CENTER);
 		add(solarDate,BorderLayout.NORTH);
 		add(moonDate,BorderLayout.SOUTH);
-
+		solarDate.setFont(font);
+		moonDate.setFont(font);
 		setBackground(Color.WHITE);
 	}
 	public void updateTodo() {

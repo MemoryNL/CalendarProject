@@ -89,7 +89,7 @@ public class DatePanel extends JPanel {
 		// 글자색 지정
 		date.setForeground(new Color(238,83,79));
 		// 폰트 선언
-		Font font = new Font("함초롬바탕",Font.BOLD,20);
+		Font font = new Font("메이플스토리",Font.BOLD,20);
 		// 폰트 지정
 		date.setFont(font);
 		// 글자 정렬

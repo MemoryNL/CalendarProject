@@ -38,7 +38,6 @@ public class CalendarPanel extends JPanel {
 		// weekPanel을 NORTH에 추가
 		add(weekPanel,BorderLayout.NORTH);
 		add(diaryPanel, BorderLayout.CENTER);
-		
 	}
 
 }

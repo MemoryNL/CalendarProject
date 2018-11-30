@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
 		// 배경화면을 검정으로 설정해준다.
 		setBackground(Color.BLACK);
 		// 화면 크기 지정
-		setSize(450,800);
+		setSize(800,600);
 		// 메뉴바가 보이지 않게끔 설정
 		setUndecorated(true);
 		// 레이아웃 설정
@@ -60,7 +60,7 @@ public class MainFrame extends JFrame {
 			}
 		});
 		// menubar를 North에 추가한다.
-		add(menubar,BorderLayout.NORTH);
+		add(menubar,BorderLayout.WEST);
 		
 		JPanel mainPanel = new MainPanel();
 		add(mainPanel,BorderLayout.CENTER);

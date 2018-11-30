@@ -61,5 +61,9 @@ public class Schedule extends JPanel{
 	public void setTodoList(ArrayList<String> todoList) {
 		this.todoList = todoList;
 	}
-	
+	//패널의 날짜부분을 회색으로 만들어주는 메소드
+	public void setLabel() {
+		this.solarDate.setForeground(Color.LIGHT_GRAY);
+		this.moonDate.setForeground(Color.LIGHT_GRAY);
+	}
 }

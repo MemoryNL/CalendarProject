@@ -3,6 +3,8 @@ package version1;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -12,14 +14,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MenubarPanel extends JPanel {
-	JLabel logo;
 	JButton exitButton;
+	JButton MainBtn, ScheduleBtn;
 	// 종료 버튼 기본 이미지
 	ImageIcon exitButtonBasicImage = new ImageIcon("images/ExitButton.png");
 	// 종료 버튼 마우스 Enter시 이미지
 	ImageIcon exitButtonEnterImage = new ImageIcon("images/ExitButtonEnter.png");
-	// Logo 이미지
-	ImageIcon logoImage =new ImageIcon("images/logo.png");
 
 	/**
 	 * Create the panel.
@@ -28,21 +28,20 @@ public class MenubarPanel extends JPanel {
 		// 레이아웃 설정
 		setLayout(new BorderLayout());
 		// 메뉴바 설정
-		logo = new JLabel(logoImage);
 		// exitButton 설정
 		exitButton = new JButton(exitButtonBasicImage);
+		MainBtn = new JButton("달력");
+		ScheduleBtn = new JButton("스케줄표");
 		// 외곽선 제거
 		exitButton.setBorderPainted(false);
 		// 내용 체우기 제거
 		exitButton.setContentAreaFilled(false);
 		// 포커스 되었을시 테두리 제거
 		exitButton.setFocusPainted(false);
-		// WEST에 컴포넌트 배치
-		add(logo,BorderLayout.WEST);
-		// EAST에 컴포넌트 배치
-		add(exitButton,BorderLayout.EAST);
+		add(exitButton, BorderLayout.NORTH);
+	//	add(MainBtn, BorderLayout.CENTER);
+	//	add(ScheduleBtn, BorderLayout.SOUTH);
 		// 패널 배경화면 설정
-		setBackground(new Color(195,241,199));
 		// 종료 버튼 이벤트 추가
 		exitButton.addMouseListener(new ExitButtonEvent());
 	}

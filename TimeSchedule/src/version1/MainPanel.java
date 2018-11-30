@@ -8,7 +8,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class MainPanel extends JPanel {
-
 	/**
 	 * Create the panel.
 	 */

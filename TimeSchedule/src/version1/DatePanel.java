@@ -12,102 +12,118 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import java.util.Calendar;
+
 public class DatePanel extends JPanel {
-
-	// ���� ��ư �⺻ �̹���
+	int r=0;
+	JLabel logo;
+	// 좌측 월 변경 버튼 이미지 설정
 	ImageIcon leftButtonBasicImage = new ImageIcon("images/leftButtonBasicImage.png");
-	// ���� ��ư Enter �̹���
+	// 좌측 월 변경 버튼 이미지 설정. 마우스를 올렸을 때.
 	ImageIcon leftButtonEnterImage = new ImageIcon("images/leftButtonEnterImage.png");
-	// ������ ��ư �⺻ �̹���
+	// 우측 월 변경 버튼 이미지 설정
 	ImageIcon rightButtonBasicImage = new ImageIcon("images/rightButtonBasicImage.png");
-	// ������ ��ư Enter �̹���
+	// 우측 월 변경 버튼 이미지 설정. 마우스를 올렸을 때.
 	ImageIcon rightButtonEnterImage = new ImageIcon("images/rightButtonEnterImage.png");
-
+	// Logo 이미지
+	ImageIcon logoImage =new ImageIcon("images/logo.png");
 	// test
 	/**
 	 * Create the panel.
 	 */
 	public DatePanel() {
+		//현재 시간 정보를 지닌 달력 생성
+		CalendarEx current = new CalendarEx(r);
+		// 현재 년도와 월수를 표현하는 date 라벨 생성, Month값은 0이 1월이므로 +1.
+		JLabel date = new JLabel(current.Year + "년 " + (current.Month+1) +"월");
 		JButton left = new JButton(leftButtonBasicImage);
 		JButton right = new JButton(rightButtonBasicImage);
-		// Button UI ����
+		// Button UI 占쏙옙占쏙옙
 		setButtonUI(left); setButtonUI(right);
-		// Mouse �̺�Ʈ ó��
+		// Mouse 占싱븝옙트 처占쏙옙
 		left.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// Entered�̹����� ���� �����ش�.
+				// Entered占싱뱄옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쌔댐옙.
 				left.setIcon(leftButtonEnterImage);
-				// Ŀ���� ����� �ٲ��ش�
+				// 커占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쌕뀐옙占쌔댐옙
 				left.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				// ȿ���� ���
+				// 효占쏙옙占쏙옙 占쏙옙占�
 			}
 
-			// ���콺�� ��ư�� �������� �̺�Ʈ ó��
+			// 占쏙옙占쎌스占쏙옙 占쏙옙튼占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占싱븝옙트 처占쏙옙
 			@Override
 			public void mouseExited(MouseEvent e) {
 				left.setIcon(leftButtonBasicImage);
-				// Ŀ���� ����� �ٲ��ش�
+				// 커占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쌕뀐옙占쌔댐옙
 				left.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
 
 			}
 
-			// ��ư�� Ŭ�������� �̺�Ʈ ó��
+			// 占쏙옙튼占쏙옙 클占쏙옙占쏙옙占쏙옙占쏙옙 占싱븝옙트 처占쏙옙
 			@Override
 			public void mousePressed(MouseEvent e) {
+				//버튼 클릭시 월 변경
+				r--;
+				CalendarEx current = new CalendarEx(r);
+				date.setText(current.Year + "년 " + (current.Month+1) +"월");
 			}
 			
 		});
 		right.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				// Entered�̹����� ���� �����ش�.
+				// Entered占싱뱄옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쌔댐옙.
 				right.setIcon(rightButtonEnterImage);
-				// Ŀ���� ����� �ٲ��ش�
+				// 커占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쌕뀐옙占쌔댐옙
 				right.setCursor(new Cursor(Cursor.HAND_CURSOR));
-				// ȿ���� ���
+				// 효占쏙옙占쏙옙 占쏙옙占�
 			}
 
-			// ���콺�� ��ư�� �������� �̺�Ʈ ó��
+			// 占쏙옙占쎌스占쏙옙 占쏙옙튼占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占싱븝옙트 처占쏙옙
 			@Override
 			public void mouseExited(MouseEvent e) {
 				right.setIcon(rightButtonBasicImage);
-				// Ŀ���� ����� �ٲ��ش�
+				// 커占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쌕뀐옙占쌔댐옙
 				right.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-
 			}
 
-			// ��ư�� Ŭ�������� �̺�Ʈ ó��
+			// 占쏙옙튼占쏙옙 클占쏙옙占쏙옙占쏙옙占쏙옙 占싱븝옙트 처占쏙옙
 			@Override
 			public void mousePressed(MouseEvent e) {
+				//버튼 클릭시 월 변경
+				r++;
+				CalendarEx current = new CalendarEx(r);
+				date.setText(current.Year + "년 " + (current.Month+1) +"월");
 			}
 		});
-		// ���̾ƿ� ����
+		logo = new JLabel(logoImage);
+		// 占쏙옙占싱아울옙 占쏙옙占쏙옙
 		setLayout(new BorderLayout());
-		// ��¥�� ǥ���� JLabel ����
-		JLabel date = new JLabel("2018�� 11��");
-		// ���ڻ� ����
+		// 占쏙옙占쌘삼옙 占쏙옙占쏙옙
 		date.setForeground(new Color(238,83,79));
-		// ��Ʈ ����
-		Font font = new Font("�����ý��丮",Font.BOLD,20);
-		// ��Ʈ ����
+		// 占쏙옙트 占쏙옙占쏙옙
+		Font font = new Font("메이플스토리",Font.BOLD,20);
+		// 占쏙옙트 占쏙옙占쏙옙
 		date.setFont(font);
-		// ���� ����
+		// 占쏙옙占쏙옙 占쏙옙占쏙옙
 		date.setHorizontalAlignment(JLabel.CENTER);
-		// ���ȭ�� ����
-		setBackground(Color.WHITE);
-		// ������Ʈ �߰�
+		// 로고 이미지와 같은 배경색으로 설정
+		setBackground(new Color(195,241,199));
+		// 占쏙옙占쏙옙占쏙옙트 占쌩곤옙
+		add(logo,BorderLayout.NORTH);
 		add(date,BorderLayout.CENTER);
 		add(left,BorderLayout.WEST);
 		add(right,BorderLayout.EAST);
+		
 	}
 	
 	public void setButtonUI(JButton button) {
-		// �ܰ��� ����
+		// 이미지 경계선을 지운다.
 		button.setBorderPainted(false);
-		// ���� ü��� ����
+		// 占쏙옙占쏙옙 체占쏙옙占� 占쏙옙占쏙옙
 		button.setContentAreaFilled(false);
-		// ��Ŀ�� �Ǿ����� �׵θ� ����
+		// 占쏙옙커占쏙옙 占실억옙占쏙옙占쏙옙 占쌓두몌옙 占쏙옙占쏙옙
 		button.setFocusPainted(false);
 	}
 
